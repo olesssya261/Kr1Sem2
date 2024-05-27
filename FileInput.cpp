@@ -53,11 +53,13 @@ std::vector<Apartment> FileDataInput()//Функция ввода списка квартир из фаила
 		}
 		catch (const std::exception) {//Обработка ошибки
 			std::cout << " Произошла ошибка при чтении информации. Повторите попытку:" << std::endl;
+			apartments.clear();//Отчиста вектора квартир
 			file.close();
 			continue;
 		}
 		catch (const CheckException err) {//Обработка ошибки пользовательского ввода
 			std::cout << err.GetMessage() << std::endl;//Вывод сообщения об ошибки
+			apartments.clear();//Отчиста вектора квартир
 			file.close();//Закрытия потока
 			continue;
 		}
