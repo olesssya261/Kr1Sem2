@@ -26,15 +26,15 @@ namespace UnitTest
 			apartments.push_back(app4);
 			apartments.push_back(app5);
 			std::vector<Apartment> sortedApartments = SamplingApartmentsByRoomCount(apartments, 2);
-			Assert::IsTrue(sortedApartments.at(0).GetAdress() == "test1");
+			Assert::IsTrue(sortedApartments.at(0) == app1);
 			 sortedApartments = SamplingApartmentsByRoomCount(apartments, 3);
-			Assert::IsTrue(sortedApartments.at(0).GetAdress() == "test2");
+			Assert::IsTrue(sortedApartments.at(0) == app2);
 			 sortedApartments = SamplingApartmentsByRoomCount(apartments, 4);
-			Assert::IsTrue(sortedApartments.at(0).GetAdress() == "test3");
+			Assert::IsTrue(sortedApartments.at(0) == app3);
 			sortedApartments = SamplingApartmentsByRoomCount(apartments, 5);
-			Assert::IsTrue(sortedApartments.at(0).GetAdress() == "test4");
+			Assert::IsTrue(sortedApartments.at(0) == app4);
 			sortedApartments = SamplingApartmentsByRoomCount(apartments, 6);
-			Assert::IsTrue(sortedApartments.at(0).GetAdress() == "test5");
+			Assert::IsTrue(sortedApartments.at(0) == app5);
 		}
 		TEST_METHOD(TestMethod2)
 		{
@@ -45,7 +45,7 @@ namespace UnitTest
 			apartments.push_back(app4);
 			apartments.push_back(app5);
 			std::vector<Apartment> sortedApartments = SamplingApartmentsByRoomCountAndFloorGap(apartments,3, std::tuple<int, int>(2, 3));
-			Assert::IsTrue(sortedApartments.at(0).GetAdress() == "test2");
+			Assert::IsTrue(sortedApartments.at(0) == app2);
 		}
 		TEST_METHOD(TestMethod3)
 		{
@@ -67,8 +67,8 @@ namespace UnitTest
 			apartments.push_back(app4);
 			apartments.push_back(app5);
 			std::vector<Apartment> sortedApartments = SamplingApartmentsByArea(apartments, 12);
-			Assert::IsTrue(sortedApartments.at(0).GetAdress() == "test4");
-			Assert::IsTrue(sortedApartments.at(1).GetAdress() == "test5");
+			Assert::IsTrue(sortedApartments.at(0) == app4);
+			Assert::IsTrue(sortedApartments.at(1) == app5);
 		}
 		TEST_METHOD(TestMethod5)
 		{

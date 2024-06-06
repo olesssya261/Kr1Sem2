@@ -5,3 +5,4 @@ std::vector<Apartment> SamplingApartmentsByRoomCount(std::vector<Apartment> apar
 std::vector<Apartment> SamplingApartmentsByRoomCountAndFloorGap(std::vector<Apartment> apartments, int roomCount, std::tuple<int, int> floorRange);//Выборка по кол-ву комнат и положения на этаже в заданом промежутке
 std::vector<Apartment> SamplingApartmentsByArea(std::vector<Apartment> apartments, double area);//Выборка по площади
 
+//TODO Добавить оператор перегрузки

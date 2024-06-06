@@ -57,3 +57,9 @@ void Apartment::ShowArea()
 {
 	std::cout << _area << std::endl;
 }
+// перегузка операторов
+bool operator == (Apartment& app1, Apartment& app2)
+{
+	return app1.GetAdress() == app2.GetAdress() && app1.GetArea() == app2.GetArea()
+		&& app1.GetFloor() == app2.GetFloor() && app1.GetRoomCount() == app2.GetRoomCount();
+}

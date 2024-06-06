@@ -19,14 +19,16 @@ std::vector<Apartment> FileDataInput()//Функция ввода списка квартир из фаила
 		{
 			if (fileName.find(".txt") == std::string::npos)//Поиск в имени фаила части .txt если указатель не указывает на элемент строки происходит повторный запрос
 			{
-				std::cout << "Не верное разрешение у файла.Повторитие попытку. " << std::endl;
+				std::cout << "Не верное разрешение у файла. Повторитие попытку. " << std::endl;
 				continue;
 			}
+			
 			if (std::filesystem::is_regular_file(fileName))//Проверка на системные фаилы
 			{
 				std::cout << "Фаил открыт успешно. " << std::endl;
-				file.open(fileName);//Открытия фаила для чтения
+
 			}
+			file.open(fileName);
 			
 		}
 		catch (const std::exception&)//Обработка ошибки при чтении из фаила
